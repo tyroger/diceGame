@@ -28,7 +28,7 @@ public class Joueur {
     }
 
     public void setScore(int score) {
-        Score = score;
+        Score += score;
     }
 
     // methode

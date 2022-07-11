@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * la classe represnte le gobelet utilisé pour la partie de dés
+ */
 class Gobelet extends De {
 
     private int valeurLancer;
