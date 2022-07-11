@@ -6,7 +6,7 @@ package dice;
 public class Joueur {
 
     private String nom;
-    private int Score;
+    private int score;
 
 // constructeur
     public Joueur(String nom){
@@ -24,17 +24,18 @@ public class Joueur {
     }
 
     public int getScore() {
-        return Score;
+        return score;
     }
 
     public void setScore(int score) {
-        Score += score;
+        score += score;
     }
 
     // methode
     public void jouer(Gobelet gobelet){
         gobelet.lancer();
-        this.setScore(gobelet.getValeurLancer());
+        score += gobelet.getValeurLancer();
+        gobelet.afficher_score();
     }
     public void afficher_score(){
 
