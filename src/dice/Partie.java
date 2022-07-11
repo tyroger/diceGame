@@ -34,24 +34,29 @@ public class Partie {
      * lancement de la partie où chaque joeur jour à son tour
      */
     public void lancerPartie() {
-        for (Joueur joueur : joueurs
-        ) {
-            joueur.jouer(gobelet);
+        Joueur winner = joueurs.get(0);
+        for (int i = 0; i < nb_tours; i++) {
+            for (Joueur joueur : joueurs
+            ) {
+                joueur.jouer(gobelet);
+                joueur.afficher_score();
+
+                if(joueur.getScore() > winner.getScore())
+                {
+                    winner  = joueur;
+                }
+            }
+            this.afficherGagnant(winner);
         }
+
+
     }
 
     /**
      * determiner qui est le gagnant de la partie
      */
-    public void afficherGagnant() {
-        int winningScore = joueurs.get(0).getScore();
-        Joueur winner = joueurs.get(0);
+    public void afficherGagnant(Joueur winner) {
 
-        for (int i = 0; i < joueurs.size() - 1; i++) {
-            if (joueurs.get(i).getScore() > winningScore) ;
-            winningScore = joueurs.get(i).getScore();
-            winner = joueurs.get(i);
-        }
-        System.out.println("Le gagnant est " + winner.getNom());
+        System.out.println("Le gagnant est " + winner.getNom() + "avec score de :"+ winner.getScore());
     }
 }

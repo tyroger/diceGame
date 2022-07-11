@@ -8,5 +8,5 @@
 
 
 >## Nombre de joueurs : 
->Choisissez le nombre au choix
+>Choisissez le nombre  de joueur
 

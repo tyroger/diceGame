@@ -7,19 +7,15 @@ import java.util.List;
 /**
  * la classe represnte le gobelet utilisé pour la partie de dés
  */
-class Gobelet extends De {
+public class Gobelet extends De {
 
     private int valeurLancer;
-    public List<De> tableauDes = new ArrayList<>(Arrays.asList());
-    int nb_des = nbDes();
+    public List<De> tableauDes;
 
-    public Gobelet() {
+    public Gobelet(List<De> tableauDes) {
         this.setValeurLancer(0);
+        this.tableauDes = tableauDes;
         // nombre de dés nécéssaires
-        for (int i = 0; i < nb_des; i++) {
-            De de = new De();
-            tableauDes.add(i, de);
-        }
     }
 
 
@@ -56,19 +52,11 @@ class Gobelet extends De {
     public void lancer() {
         for (De de : tableauDes
         ) {
-            tableauDes.remove(de);
-        }
-        for (int i = 0; i < nb_des; i++) {
-            De de = new De();
-            tableauDes.add(de);
+            this.valeurLancer += de.getValeurDuDe();
         }
     }
 
     public void afficher_score() {
-        int score = 0;
-        for (De de : tableauDes) {
-            score += de.getValeurDuDe();
-        }
-        System.out.println("la somme des dés du gobelet est de : " + score);
+        System.out.println("la somme des dés du gobelet est de : " + this.valeurLancer);
     }
 }
