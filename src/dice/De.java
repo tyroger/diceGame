@@ -1,3 +1,5 @@
+package dice;
+
 /**
  * represente le dé du gobelet
  * @valeur valeur donnée par un dé
@@ -13,12 +15,10 @@ public class De {
     }
 
     public int getValeurDuDe() {
+        valeurDuDe = lancerDe();
         return valeurDuDe;
     }
 
-    public void setValeur(int valeurDuDe) {
-        this.valeurDuDe = valeurDuDe;
-    }
 
     /**
      * Methode permettant de simuler le lancé du dé,
@@ -29,7 +29,6 @@ public class De {
         int minValue = 1;
         int maxValue = 6;
         valeur = (int) (Math.random() * (maxValue - minValue + 1) + minValue);
-        setValeur(valeur);
         return valeur;
     }
 }
