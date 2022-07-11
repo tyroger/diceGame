@@ -24,7 +24,7 @@ public class Joueur {
     }
 
     public int getScore() {
-        return score;
+        return this.score;
     }
 
     public void setScore(int score) {
@@ -34,7 +34,7 @@ public class Joueur {
     // methode
     public void jouer(Gobelet gobelet){
         gobelet.lancer();
-        score += gobelet.getValeurLancer();
+        this.score += gobelet.getValeurLancer();
         gobelet.afficher_score();
     }
     public void afficher_score(){
